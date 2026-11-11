@@ -1,0 +1,2079 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Above Us API",
+    "description": "Observer-relative pass discovery for heritage spacecraft. Predictions are geometric; a predicted pass does not guarantee optical visibility.",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object",
+                  "title": "Response Health Api V1 Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/status": {
+      "get": {
+        "summary": "Status",
+        "operationId": "status_api_v1_status_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cities": {
+      "get": {
+        "summary": "List Cities",
+        "operationId": "list_cities_api_v1_cities_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 80
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Q"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityList"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/discover": {
+      "post": {
+        "summary": "Post Discover",
+        "operationId": "post_discover_api_v1_discover_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoverRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoverResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/satellites": {
+      "get": {
+        "summary": "List Satellites",
+        "operationId": "list_satellites_api_v1_satellites_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SatelliteList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/satellites/{norad_id}": {
+      "get": {
+        "summary": "Get Satellite",
+        "operationId": "get_satellite_api_v1_satellites__norad_id__get",
+        "parameters": [
+          {
+            "name": "norad_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Norad Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SatelliteDetail"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          }
+        }
+      }
+    },
+    "/api/v1/satellites/{norad_id}/passes": {
+      "get": {
+        "summary": "Get Passes",
+        "operationId": "get_passes_api_v1_satellites__norad_id__passes_get",
+        "parameters": [
+          {
+            "name": "norad_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Norad Id"
+            }
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "maximum": 90,
+              "minimum": -90,
+              "title": "Lat"
+            }
+          },
+          {
+            "name": "lon",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "maximum": 180,
+              "minimum": -180,
+              "title": "Lon"
+            }
+          },
+          {
+            "name": "elevation_m",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "maximum": 9000,
+              "minimum": -500,
+              "default": 0,
+              "title": "Elevation M"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start"
+            }
+          },
+          {
+            "name": "hours",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "maximum": 72.0,
+              "exclusiveMinimum": 0,
+              "default": 24.0,
+              "title": "Hours"
+            }
+          },
+          {
+            "name": "min_elevation_deg",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "maximum": 89,
+              "minimum": 0,
+              "default": 10.0,
+              "title": "Min Elevation Deg"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PassesResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          }
+        }
+      }
+    },
+    "/api/v1/graveyard": {
+      "get": {
+        "summary": "Graveyard",
+        "operationId": "graveyard_api_v1_graveyard_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GraveyardResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/methodology": {
+      "get": {
+        "summary": "Methodology",
+        "operationId": "methodology_api_v1_methodology_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MethodologyDoc"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Candidate": {
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "title": "Rank"
+          },
+          "satellite": {
+            "$ref": "#/components/schemas/SatelliteSummary"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          },
+          "pass_count": {
+            "type": "integer",
+            "title": "Pass Count"
+          },
+          "highest_elevation_deg": {
+            "type": "number",
+            "title": "Highest Elevation Deg"
+          },
+          "passes": {
+            "items": {
+              "$ref": "#/components/schemas/PassModel"
+            },
+            "type": "array",
+            "title": "Passes"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "rank",
+          "satellite",
+          "provenance",
+          "pass_count",
+          "highest_elevation_deg",
+          "passes"
+        ],
+        "title": "Candidate"
+      },
+      "City": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "region": {
+            "type": "string",
+            "title": "Region"
+          },
+          "country": {
+            "type": "string",
+            "title": "Country"
+          },
+          "latitude_deg": {
+            "type": "number",
+            "title": "Latitude Deg"
+          },
+          "longitude_deg": {
+            "type": "number",
+            "title": "Longitude Deg"
+          },
+          "timezone": {
+            "type": "string",
+            "title": "Timezone"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "region",
+          "country",
+          "latitude_deg",
+          "longitude_deg",
+          "timezone"
+        ],
+        "title": "City"
+      },
+      "CityList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/City"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "note": {
+            "type": "string",
+            "title": "Note"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "items",
+          "note"
+        ],
+        "title": "CityList"
+      },
+      "DiscoverRequest": {
+        "properties": {
+          "observer": {
+            "$ref": "#/components/schemas/ObserverModel"
+          },
+          "start": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start",
+            "description": "Window start (UTC). Defaults to the server's reference time."
+          },
+          "hours": {
+            "type": "number",
+            "maximum": 72.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Hours",
+            "default": 24.0
+          },
+          "min_elevation_deg": {
+            "type": "number",
+            "maximum": 89.0,
+            "minimum": 0.0,
+            "title": "Min Elevation Deg",
+            "default": 10.0
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "observer"
+        ],
+        "title": "DiscoverRequest"
+      },
+      "DiscoverResponse": {
+        "properties": {
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "data_mode": {
+            "type": "string",
+            "enum": [
+              "live",
+              "mixed",
+              "snapshot"
+            ],
+            "title": "Data Mode"
+          },
+          "observer": {
+            "$ref": "#/components/schemas/ObserverModel"
+          },
+          "window_start": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Window Start"
+          },
+          "window_end": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Window End"
+          },
+          "min_elevation_deg": {
+            "type": "number",
+            "title": "Min Elevation Deg"
+          },
+          "oldest": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Candidate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/Candidate"
+            },
+            "type": "array",
+            "title": "Candidates"
+          },
+          "excluded": {
+            "items": {
+              "$ref": "#/components/schemas/Exclusion"
+            },
+            "type": "array",
+            "title": "Excluded"
+          },
+          "exclusion_counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Exclusion Counts"
+          },
+          "methodology": {
+            "$ref": "#/components/schemas/Methodology"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceLink"
+            },
+            "type": "array",
+            "title": "Sources"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "generated_at",
+          "data_mode",
+          "observer",
+          "window_start",
+          "window_end",
+          "min_elevation_deg",
+          "oldest",
+          "candidates",
+          "excluded",
+          "exclusion_counts",
+          "methodology",
+          "limitations",
+          "sources"
+        ],
+        "title": "DiscoverResponse"
+      },
+      "Elements": {
+        "properties": {
+          "omm": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Omm"
+          },
+          "tle_line1": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tle Line1"
+          },
+          "tle_line2": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tle Line2"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          },
+          "semi_major_axis_km": {
+            "type": "number",
+            "title": "Semi Major Axis Km"
+          },
+          "period_min": {
+            "type": "number",
+            "title": "Period Min"
+          },
+          "apogee_km": {
+            "type": "number",
+            "title": "Apogee Km"
+          },
+          "perigee_km": {
+            "type": "number",
+            "title": "Perigee Km"
+          },
+          "inclination_deg": {
+            "type": "number",
+            "title": "Inclination Deg"
+          },
+          "eccentricity": {
+            "type": "number",
+            "title": "Eccentricity"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "omm",
+          "tle_line1",
+          "tle_line2",
+          "provenance",
+          "semi_major_axis_km",
+          "period_min",
+          "apogee_km",
+          "perigee_km",
+          "inclination_deg",
+          "eccentricity"
+        ],
+        "title": "Elements"
+      },
+      "ErrorBody": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "details": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Details"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorBody"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorBody"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "title": "ErrorResponse"
+      },
+      "Exclusion": {
+        "properties": {
+          "norad_id": {
+            "type": "integer",
+            "title": "Norad Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "launch_date": {
+            "type": "string",
+            "title": "Launch Date"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "no_elements",
+              "stale_elements",
+              "propagation_error",
+              "no_pass"
+            ],
+            "title": "Reason"
+          },
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "norad_id",
+          "name",
+          "launch_date",
+          "reason",
+          "detail"
+        ],
+        "title": "Exclusion"
+      },
+      "GraveyardEntry": {
+        "properties": {
+          "satellite": {
+            "$ref": "#/components/schemas/SatelliteSummary"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summary"
+          },
+          "last_contact": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Contact"
+          },
+          "years_in_orbit": {
+            "type": "number",
+            "title": "Years In Orbit"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "satellite",
+          "summary",
+          "last_contact",
+          "years_in_orbit"
+        ],
+        "title": "GraveyardEntry"
+      },
+      "GraveyardResponse": {
+        "properties": {
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "still_orbiting": {
+            "items": {
+              "$ref": "#/components/schemas/GraveyardEntry"
+            },
+            "type": "array",
+            "title": "Still Orbiting"
+          },
+          "reentered": {
+            "items": {
+              "$ref": "#/components/schemas/GraveyardEntry"
+            },
+            "type": "array",
+            "title": "Reentered"
+          },
+          "note": {
+            "type": "string",
+            "title": "Note"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "generated_at",
+          "still_orbiting",
+          "reentered",
+          "note"
+        ],
+        "title": "GraveyardResponse"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Methodology": {
+        "properties": {
+          "candidate_set_version": {
+            "type": "string",
+            "title": "Candidate Set Version"
+          },
+          "candidate_set_description": {
+            "type": "string",
+            "title": "Candidate Set Description"
+          },
+          "candidate_count": {
+            "type": "integer",
+            "title": "Candidate Count"
+          },
+          "eligibility_rules": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Eligibility Rules"
+          },
+          "ranking_rule": {
+            "type": "string",
+            "title": "Ranking Rule"
+          },
+          "pass_definition": {
+            "type": "string",
+            "title": "Pass Definition"
+          },
+          "propagator": {
+            "type": "string",
+            "title": "Propagator"
+          },
+          "max_element_age_days": {
+            "type": "number",
+            "title": "Max Element Age Days"
+          },
+          "min_elevation_deg": {
+            "type": "number",
+            "title": "Min Elevation Deg"
+          },
+          "window_hours": {
+            "type": "number",
+            "title": "Window Hours"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "candidate_set_version",
+          "candidate_set_description",
+          "candidate_count",
+          "eligibility_rules",
+          "ranking_rule",
+          "pass_definition",
+          "propagator",
+          "max_element_age_days",
+          "min_elevation_deg",
+          "window_hours"
+        ],
+        "title": "Methodology"
+      },
+      "MethodologyDoc": {
+        "properties": {
+          "methodology": {
+            "$ref": "#/components/schemas/Methodology"
+          },
+          "exclusion_reasons": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Exclusion Reasons"
+          },
+          "illumination_labels": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Illumination Labels"
+          },
+          "freshness_rules": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Freshness Rules"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceLink"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "validation_summary": {
+            "type": "string",
+            "title": "Validation Summary"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "methodology",
+          "exclusion_reasons",
+          "illumination_labels",
+          "freshness_rules",
+          "limitations",
+          "sources",
+          "validation_summary"
+        ],
+        "title": "MethodologyDoc"
+      },
+      "ObserverModel": {
+        "properties": {
+          "latitude_deg": {
+            "type": "number",
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "title": "Latitude Deg"
+          },
+          "longitude_deg": {
+            "type": "number",
+            "maximum": 180.0,
+            "minimum": -180.0,
+            "title": "Longitude Deg"
+          },
+          "elevation_m": {
+            "type": "number",
+            "maximum": 9000.0,
+            "minimum": -500.0,
+            "title": "Elevation M",
+            "default": 0
+          },
+          "place_name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 120
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Place Name"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "latitude_deg",
+          "longitude_deg"
+        ],
+        "title": "ObserverModel"
+      },
+      "PassModel": {
+        "properties": {
+          "start": {
+            "$ref": "#/components/schemas/PassPointModel"
+          },
+          "culmination": {
+            "$ref": "#/components/schemas/PassPointModel"
+          },
+          "end": {
+            "$ref": "#/components/schemas/PassPointModel"
+          },
+          "duration_s": {
+            "type": "number",
+            "title": "Duration S"
+          },
+          "starts_before_window": {
+            "type": "boolean",
+            "title": "Starts Before Window"
+          },
+          "ends_after_window": {
+            "type": "boolean",
+            "title": "Ends After Window"
+          },
+          "range_km": {
+            "type": "number",
+            "title": "Range Km"
+          },
+          "sun_altitude_deg": {
+            "type": "number",
+            "title": "Sun Altitude Deg"
+          },
+          "satellite_sunlit": {
+            "type": "boolean",
+            "title": "Satellite Sunlit"
+          },
+          "illumination": {
+            "type": "string",
+            "enum": [
+              "dark_sky_sunlit",
+              "twilight_sunlit",
+              "daylight",
+              "eclipsed"
+            ],
+            "title": "Illumination"
+          },
+          "illumination_label": {
+            "type": "string",
+            "title": "Illumination Label"
+          },
+          "track": {
+            "items": {
+              "$ref": "#/components/schemas/TrackPoint"
+            },
+            "type": "array",
+            "title": "Track"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "start",
+          "culmination",
+          "end",
+          "duration_s",
+          "starts_before_window",
+          "ends_after_window",
+          "range_km",
+          "sun_altitude_deg",
+          "satellite_sunlit",
+          "illumination",
+          "illumination_label",
+          "track"
+        ],
+        "title": "PassModel"
+      },
+      "PassPointModel": {
+        "properties": {
+          "time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Time"
+          },
+          "azimuth_deg": {
+            "type": "number",
+            "title": "Azimuth Deg"
+          },
+          "elevation_deg": {
+            "type": "number",
+            "title": "Elevation Deg"
+          },
+          "compass": {
+            "type": "string",
+            "title": "Compass"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "time",
+          "azimuth_deg",
+          "elevation_deg",
+          "compass"
+        ],
+        "title": "PassPointModel"
+      },
+      "PassesResponse": {
+        "properties": {
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "satellite": {
+            "$ref": "#/components/schemas/SatelliteSummary"
+          },
+          "observer": {
+            "$ref": "#/components/schemas/ObserverModel"
+          },
+          "window_start": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Window Start"
+          },
+          "window_end": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Window End"
+          },
+          "min_elevation_deg": {
+            "type": "number",
+            "title": "Min Elevation Deg"
+          },
+          "provenance": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Provenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "passes": {
+            "items": {
+              "$ref": "#/components/schemas/PassModel"
+            },
+            "type": "array",
+            "title": "Passes"
+          },
+          "not_computed_reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "no_elements",
+                  "stale_elements",
+                  "propagation_error",
+                  "no_pass"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Not Computed Reason"
+          },
+          "not_computed_detail": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Not Computed Detail"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "generated_at",
+          "satellite",
+          "observer",
+          "window_start",
+          "window_end",
+          "min_elevation_deg",
+          "provenance",
+          "passes",
+          "not_computed_reason",
+          "not_computed_detail",
+          "limitations"
+        ],
+        "title": "PassesResponse"
+      },
+      "Provenance": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": [
+              "live",
+              "snapshot"
+            ],
+            "title": "Source"
+          },
+          "source_url": {
+            "type": "string",
+            "title": "Source Url"
+          },
+          "retrieved_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Retrieved At"
+          },
+          "element_epoch": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Element Epoch"
+          },
+          "element_age_days": {
+            "type": "number",
+            "title": "Element Age Days",
+            "description": "Reference time minus element epoch, in days."
+          },
+          "freshness": {
+            "type": "string",
+            "enum": [
+              "fresh",
+              "aging",
+              "stale"
+            ],
+            "title": "Freshness"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source",
+          "source_url",
+          "retrieved_at",
+          "element_epoch",
+          "element_age_days",
+          "freshness"
+        ],
+        "title": "Provenance",
+        "description": "Where an element set came from and how old it is relative to the prediction."
+      },
+      "RefreshState": {
+        "properties": {
+          "running": {
+            "type": "boolean",
+            "title": "Running"
+          },
+          "last_started_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Started At"
+          },
+          "last_finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Finished At"
+          },
+          "last_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Error"
+          },
+          "gp_done": {
+            "type": "integer",
+            "title": "Gp Done"
+          },
+          "gp_total": {
+            "type": "integer",
+            "title": "Gp Total"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "running",
+          "last_started_at",
+          "last_finished_at",
+          "last_error",
+          "gp_done",
+          "gp_total"
+        ],
+        "title": "RefreshState"
+      },
+      "SatelliteDetail": {
+        "properties": {
+          "satellite": {
+            "$ref": "#/components/schemas/SatelliteSummary"
+          },
+          "story": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Story"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "elements": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Elements"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "elements_unavailable_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Elements Unavailable Reason"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceLink"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "satellite",
+          "story",
+          "elements",
+          "elements_unavailable_reason",
+          "sources",
+          "limitations"
+        ],
+        "title": "SatelliteDetail"
+      },
+      "SatelliteList": {
+        "properties": {
+          "reference_time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Reference Time"
+          },
+          "candidate_set_version": {
+            "type": "string",
+            "title": "Candidate Set Version"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SatelliteListItem"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "reference_time",
+          "candidate_set_version",
+          "items"
+        ],
+        "title": "SatelliteList"
+      },
+      "SatelliteListItem": {
+        "properties": {
+          "satellite": {
+            "$ref": "#/components/schemas/SatelliteSummary"
+          },
+          "provenance": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Provenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "tle_line1": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tle Line1"
+          },
+          "tle_line2": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tle Line2"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "satellite",
+          "provenance",
+          "tle_line1",
+          "tle_line2"
+        ],
+        "title": "SatelliteListItem"
+      },
+      "SatelliteSummary": {
+        "properties": {
+          "norad_id": {
+            "type": "integer",
+            "title": "Norad Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Catalogue name from SATCAT."
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "cospar_id": {
+            "type": "string",
+            "title": "Cospar Id"
+          },
+          "object_type": {
+            "type": "string",
+            "title": "Object Type"
+          },
+          "owner_code": {
+            "type": "string",
+            "title": "Owner Code"
+          },
+          "country": {
+            "type": "string",
+            "title": "Country"
+          },
+          "launch_date": {
+            "type": "string",
+            "title": "Launch Date"
+          },
+          "launch_year": {
+            "type": "integer",
+            "title": "Launch Year"
+          },
+          "launch_date_verification": {
+            "type": "string",
+            "enum": [
+              "satcat+curated",
+              "satcat",
+              "mismatch"
+            ],
+            "title": "Launch Date Verification"
+          },
+          "decay_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Decay Date"
+          },
+          "on_orbit": {
+            "type": "boolean",
+            "title": "On Orbit"
+          },
+          "ops_status_code": {
+            "type": "string",
+            "title": "Ops Status Code"
+          },
+          "ops_status_label": {
+            "type": "string",
+            "title": "Ops Status Label"
+          },
+          "period_min": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Period Min"
+          },
+          "inclination_deg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Inclination Deg"
+          },
+          "apogee_km": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Apogee Km"
+          },
+          "perigee_km": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Perigee Km"
+          },
+          "has_story": {
+            "type": "boolean",
+            "title": "Has Story"
+          },
+          "tagline": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tagline"
+          },
+          "fate": {
+            "type": "string",
+            "enum": [
+              "orbiting_silent",
+              "orbiting_passive",
+              "orbiting_active",
+              "reentered",
+              "unknown"
+            ],
+            "title": "Fate"
+          },
+          "fate_label": {
+            "type": "string",
+            "title": "Fate Label"
+          },
+          "in_candidate_set": {
+            "type": "boolean",
+            "title": "In Candidate Set"
+          },
+          "set_reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "oldest_payload",
+                  "curated"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Set Reason"
+          },
+          "catalogue_source": {
+            "type": "string",
+            "enum": [
+              "live",
+              "snapshot"
+            ],
+            "title": "Catalogue Source"
+          },
+          "catalogue_retrieved_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Catalogue Retrieved At"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "norad_id",
+          "name",
+          "display_name",
+          "cospar_id",
+          "object_type",
+          "owner_code",
+          "country",
+          "launch_date",
+          "launch_year",
+          "launch_date_verification",
+          "decay_date",
+          "on_orbit",
+          "ops_status_code",
+          "ops_status_label",
+          "period_min",
+          "inclination_deg",
+          "apogee_km",
+          "perigee_km",
+          "has_story",
+          "tagline",
+          "fate",
+          "fate_label",
+          "in_candidate_set",
+          "set_reason",
+          "catalogue_source",
+          "catalogue_retrieved_at"
+        ],
+        "title": "SatelliteSummary"
+      },
+      "SourceLink": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "publisher": {
+            "type": "string",
+            "title": "Publisher"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "orbital_data",
+              "catalogue",
+              "mission_record"
+            ],
+            "title": "Kind"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "title",
+          "publisher",
+          "url",
+          "kind"
+        ],
+        "title": "SourceLink"
+      },
+      "Status": {
+        "properties": {
+          "server_time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Server Time"
+          },
+          "data_mode": {
+            "type": "string",
+            "enum": [
+              "live",
+              "mixed",
+              "snapshot"
+            ],
+            "title": "Data Mode"
+          },
+          "data_mode_label": {
+            "type": "string",
+            "title": "Data Mode Label"
+          },
+          "default_window_start": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Default Window Start"
+          },
+          "snapshot_captured_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Snapshot Captured At"
+          },
+          "candidate_set_version": {
+            "type": "string",
+            "title": "Candidate Set Version"
+          },
+          "candidate_count": {
+            "type": "integer",
+            "title": "Candidate Count"
+          },
+          "elements_live": {
+            "type": "integer",
+            "title": "Elements Live"
+          },
+          "elements_snapshot": {
+            "type": "integer",
+            "title": "Elements Snapshot"
+          },
+          "elements_missing": {
+            "type": "integer",
+            "title": "Elements Missing"
+          },
+          "satcat_source": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "live",
+                  "snapshot"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Satcat Source"
+          },
+          "satcat_retrieved_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Satcat Retrieved At"
+          },
+          "oldest_element_epoch": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oldest Element Epoch"
+          },
+          "newest_element_epoch": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Newest Element Epoch"
+          },
+          "oldest_element_retrieval": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oldest Element Retrieval"
+          },
+          "newest_element_retrieval": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Newest Element Retrieval"
+          },
+          "refresh": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RefreshState"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "server_time",
+          "data_mode",
+          "data_mode_label",
+          "default_window_start",
+          "snapshot_captured_at",
+          "candidate_set_version",
+          "candidate_count",
+          "elements_live",
+          "elements_snapshot",
+          "elements_missing",
+          "satcat_source",
+          "satcat_retrieved_at",
+          "oldest_element_epoch",
+          "newest_element_epoch",
+          "oldest_element_retrieval",
+          "newest_element_retrieval",
+          "refresh"
+        ],
+        "title": "Status"
+      },
+      "Story": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "tagline": {
+            "type": "string",
+            "title": "Tagline"
+          },
+          "country": {
+            "type": "string",
+            "title": "Country"
+          },
+          "operator": {
+            "type": "string",
+            "title": "Operator"
+          },
+          "mission_type": {
+            "type": "string",
+            "title": "Mission Type"
+          },
+          "last_contact": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Contact"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary"
+          },
+          "significance": {
+            "type": "string",
+            "title": "Significance"
+          },
+          "facts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Facts"
+          },
+          "timeline": {
+            "items": {
+              "$ref": "#/components/schemas/TimelineEventModel"
+            },
+            "type": "array",
+            "title": "Timeline"
+          },
+          "editorial_status": {
+            "type": "string",
+            "const": "draft",
+            "title": "Editorial Status"
+          },
+          "editorial_note": {
+            "type": "string",
+            "title": "Editorial Note"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "title",
+          "tagline",
+          "country",
+          "operator",
+          "mission_type",
+          "last_contact",
+          "summary",
+          "significance",
+          "facts",
+          "timeline",
+          "editorial_status",
+          "editorial_note"
+        ],
+        "title": "Story"
+      },
+      "TimelineEventModel": {
+        "properties": {
+          "date": {
+            "type": "string",
+            "title": "Date"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "date",
+          "label"
+        ],
+        "title": "TimelineEventModel"
+      },
+      "TrackPoint": {
+        "properties": {
+          "time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Time"
+          },
+          "azimuth_deg": {
+            "type": "number",
+            "title": "Azimuth Deg"
+          },
+          "elevation_deg": {
+            "type": "number",
+            "title": "Elevation Deg"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "time",
+          "azimuth_deg",
+          "elevation_deg"
+        ],
+        "title": "TrackPoint"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

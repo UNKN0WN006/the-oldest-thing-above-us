@@ -1,0 +1,338 @@
+{
+  "editorial_note": "Narratives are an editorial draft written for this build. Launch dates, decay dates and catalogue status are machine-checked against CelesTrak SATCAT; narrative sentences should be reviewed against the linked sources before publication.",
+  "stories": [
+    {
+      "norad_id": 5, "title": "Vanguard 1", "tagline": "The oldest human-made object still in orbit.",
+      "launch_date": "1958-03-17", "country": "United States", "operator": "U.S. Naval Research Laboratory",
+      "mission_type": "Technology and geodesy", "fate": "orbiting_silent", "last_contact": "1964",
+      "summary": "A 16.5 cm aluminium sphere weighing about 1.5 kg, Vanguard 1 was the fourth satellite ever to reach orbit and the first to carry solar cells. Its transmitter fell silent in 1964, but its high orbit means the spacecraft itself is still circling Earth.",
+      "significance": "Tracking its orbit let scientists measure the shape of Earth, revealing a slight north–south asymmetry often described as a 'pear shape'. Because it is so small and has been tracked for so long, it is still used to study how the thin upper atmosphere drags on satellites.",
+      "facts": ["First satellite powered by solar cells.", "Its battery transmitter stopped in 1958; the solar-powered one kept going until 1964.", "Soviet premier Nikita Khrushchev mocked it as the 'grapefruit satellite'.", "It is expected to stay in orbit for roughly two more centuries."],
+      "timeline": [{"date": "1958-03-17", "label": "Launched from Cape Canaveral on a Vanguard rocket"}, {"date": "1958-06", "label": "Battery-powered transmitter stops"}, {"date": "1964", "label": "Last signal from the solar-powered transmitter"}]
+    },
+    {
+      "norad_id": 11, "title": "Vanguard 2", "tagline": "An early attempt to watch the weather from orbit.",
+      "launch_date": "1959-02-17", "country": "United States", "operator": "NASA (built by the Naval Research Laboratory)",
+      "mission_type": "Meteorology experiment", "fate": "orbiting_silent", "last_contact": "1959",
+      "summary": "Vanguard 2 carried two optical telescopes with photocells to measure how much sunlight Earth's clouds reflect. It was the first satellite designed to observe weather.",
+      "significance": "The satellite wobbled as it spun, so its cloud data could not be turned into usable maps — a lesson that shaped the design of TIROS 1 a year later.",
+      "facts": ["A 50 cm magnesium sphere, much larger than Vanguard 1.", "Its batteries lasted a little under three weeks."],
+      "timeline": [{"date": "1959-02-17", "label": "Launched from Cape Canaveral"}, {"date": "1959-03", "label": "Batteries exhausted; transmissions end"}]
+    },
+    {
+      "norad_id": 20, "title": "Vanguard 3", "tagline": "The last of the Vanguards.",
+      "launch_date": "1959-09-18", "country": "United States", "operator": "NASA",
+      "mission_type": "Space-environment science", "fate": "orbiting_silent", "last_contact": "1959-12",
+      "summary": "The final Vanguard satellite measured Earth's magnetic field, solar X-rays and micrometeoroid impacts for 84 days before its batteries ran down.",
+      "significance": "Its magnetometer data helped map Earth's magnetic field at altitude, and its findings on the lower edge of the Van Allen radiation belts refined the first maps of them.",
+      "facts": ["The rocket's third stage stayed attached to the satellite by design.", "It closed out the Vanguard programme."],
+      "timeline": [{"date": "1959-09-18", "label": "Launched from Cape Canaveral"}, {"date": "1959-12-11", "label": "Transmissions end after 84 days"}]
+    },
+    {
+      "norad_id": 22, "title": "Explorer 7", "tagline": "Where satellite climate science began.",
+      "launch_date": "1959-10-13", "country": "United States", "operator": "NASA",
+      "mission_type": "Earth and space science", "fate": "orbiting_silent", "last_contact": "1961-08",
+      "summary": "Explorer 7 carried a simple radiometer designed by Verner Suomi and Robert Parent that measured how much heat Earth absorbs from the Sun and radiates back to space.",
+      "significance": "Those were the first measurements of Earth's radiation budget from orbit — the quantity at the heart of modern climate science.",
+      "facts": ["Launched on a Juno II rocket.", "It also carried cosmic-ray and solar X-ray instruments.", "It returned data until August 1961."],
+      "timeline": [{"date": "1959-10-13", "label": "Launched from Cape Canaveral"}, {"date": "1961-08-24", "label": "Last useful data received"}]
+    },
+    {
+      "norad_id": 29, "title": "TIROS 1", "tagline": "The first weather satellite that worked.",
+      "launch_date": "1960-04-01", "country": "United States", "operator": "NASA",
+      "mission_type": "Meteorology", "fate": "orbiting_silent", "last_contact": "1960-06",
+      "summary": "The Television Infrared Observation Satellite carried two television cameras and sent back nearly 23,000 pictures of Earth's cloud cover in 78 days.",
+      "significance": "TIROS 1 proved that weather could be watched from space. Every weather satellite image in a forecast today descends from it.",
+      "facts": ["Its first images showed cloud systems organised on a scale nobody had seen whole before.", "It operated for 78 days until an electrical failure."],
+      "timeline": [{"date": "1960-04-01", "label": "Launched from Cape Canaveral on a Thor-Able rocket"}, {"date": "1960-06", "label": "Operations end after 78 days"}]
+    },
+    {
+      "norad_id": 45, "title": "Transit 2A", "tagline": "A step toward navigating by satellite.",
+      "launch_date": "1960-06-22", "country": "United States", "operator": "U.S. Navy / Johns Hopkins Applied Physics Laboratory",
+      "mission_type": "Navigation technology", "fate": "orbiting_silent", "last_contact": "1962",
+      "summary": "Transit 2A was an experimental satellite for the U.S. Navy's Transit system, which let ships and submarines fix their position from the Doppler shift of a satellite's radio signal.",
+      "significance": "Transit was the first operational satellite navigation system — the ancestor of GPS and other satellite navigation services.",
+      "facts": ["It shared its rocket with SOLRAD 1, an early launch of two working satellites on one vehicle.", "It operated for about two years."],
+      "timeline": [{"date": "1960-06-22", "label": "Launched from Cape Canaveral on a Thor-Ablestar"}]
+    },
+    {
+      "norad_id": 46, "title": "SOLRAD 1 (GRAB 1)", "tagline": "A Sun-watcher with a secret second job.",
+      "launch_date": "1960-06-22", "country": "United States", "operator": "U.S. Naval Research Laboratory",
+      "mission_type": "Solar science and signals intelligence", "fate": "orbiting_silent",
+      "summary": "Publicly, SOLRAD 1 measured X-rays from the Sun. It also carried GRAB, a classified receiver that recorded Soviet air-defence radar signals as it passed overhead.",
+      "significance": "GRAB is regarded as the first successful U.S. reconnaissance satellite. Its existence was only declassified in 1998.",
+      "facts": ["Launched together with Transit 2A.", "Its solar X-ray data linked solar flares to radio blackouts on Earth."],
+      "timeline": [{"date": "1960-06-22", "label": "Launched from Cape Canaveral"}, {"date": "1998", "label": "GRAB mission declassified"}]
+    },
+    {
+      "norad_id": 58, "title": "Courier 1B", "tagline": "The first satellite to answer back.",
+      "launch_date": "1960-10-04", "country": "United States", "operator": "U.S. Army Signal Corps",
+      "mission_type": "Communications", "fate": "orbiting_silent", "last_contact": "1960-10",
+      "summary": "Courier 1B was the first active-repeater communications satellite: it received messages, stored them on tape recorders, and retransmitted them to another ground station.",
+      "significance": "Earlier experiments simply bounced signals off a satellite. Courier showed that a satellite could carry its own radio relay — the principle behind all modern communications satellites.",
+      "facts": ["Covered in roughly 19,000 solar cells.", "A fault ended communications after 17 days."],
+      "timeline": [{"date": "1960-10-04", "label": "Launched from Cape Canaveral"}, {"date": "1960-10", "label": "Stops responding after 17 days"}]
+    },
+    {
+      "norad_id": 107, "title": "Explorer 11", "tagline": "The first gamma-ray telescope in space.",
+      "launch_date": "1961-04-27", "country": "United States", "operator": "NASA",
+      "mission_type": "Astronomy", "fate": "orbiting_silent", "last_contact": "1961-11",
+      "summary": "Explorer 11 carried the first telescope built to detect gamma rays from space, a form of light that Earth's atmosphere blocks completely.",
+      "significance": "In months of observing it recorded just 22 gamma rays from the cosmos — few, but enough to open gamma-ray astronomy.",
+      "facts": ["Launched on a Juno II rocket.", "It could only observe by tumbling slowly and scanning the whole sky."],
+      "timeline": [{"date": "1961-04-27", "label": "Launched from Cape Canaveral"}, {"date": "1961-11", "label": "Operations end"}]
+    },
+    {
+      "norad_id": 340, "title": "Telstar 1", "tagline": "Live television crosses the Atlantic.",
+      "launch_date": "1962-07-10", "country": "United States", "operator": "AT&T / Bell Telephone Laboratories",
+      "mission_type": "Communications", "fate": "orbiting_silent", "last_contact": "1963-02",
+      "summary": "Telstar 1 relayed the first live television pictures between the United States and Europe in July 1962, along with telephone calls and data.",
+      "significance": "It was the first privately sponsored spacecraft and made satellite communication a public event. Its electronics were damaged by radiation from a high-altitude nuclear test carried out the day before it launched.",
+      "facts": ["Because of its low orbit it could link the continents for only about 20 minutes per pass.", "It inspired a chart-topping instrumental, 'Telstar', in 1962."],
+      "timeline": [{"date": "1962-07-10", "label": "Launched from Cape Canaveral on a Thor-Delta"}, {"date": "1962-07-23", "label": "First public live transatlantic television broadcast"}, {"date": "1963-02", "label": "Fails for good after radiation damage"}]
+    },
+    {
+      "norad_id": 424, "title": "Alouette 1", "tagline": "Canada's first satellite.",
+      "launch_date": "1962-09-29", "country": "Canada", "operator": "Defence Research Telecommunications Establishment",
+      "mission_type": "Ionospheric science", "fate": "orbiting_silent", "last_contact": "1972",
+      "summary": "Alouette 1 studied the ionosphere from above, using radio sounding to map the electrically charged layer of the upper atmosphere that long-distance radio depends on.",
+      "significance": "It was the first satellite built by a country other than the Soviet Union or the United States. Designed to last one year, it worked for ten.",
+      "facts": ["Launched by NASA from Vandenberg in California.", "It returned more than a million images of the ionosphere's structure."],
+      "timeline": [{"date": "1962-09-29", "label": "Launched on a Thor-Agena B"}, {"date": "1972", "label": "Switched off after ten years of operation"}]
+    },
+    {
+      "norad_id": 503, "title": "Relay 1", "tagline": "The first television link across the Pacific.",
+      "launch_date": "1962-12-13", "country": "United States", "operator": "NASA (built by RCA)",
+      "mission_type": "Communications", "fate": "orbiting_silent", "last_contact": "1965",
+      "summary": "Relay 1 was an experimental communications satellite that carried television, telephone and data between the United States, Europe, South America and Japan.",
+      "significance": "On 22 November 1963 it carried the first television transmission from the United States to Japan. The planned programme was replaced by news of President Kennedy's assassination.",
+      "facts": ["It also measured the radiation environment that had damaged Telstar 1."],
+      "timeline": [{"date": "1962-12-13", "label": "Launched from Cape Canaveral"}, {"date": "1963-11-22", "label": "First U.S.–Japan television transmission"}]
+    },
+    {
+      "norad_id": 634, "title": "Syncom 2", "tagline": "The first satellite to keep pace with Earth's rotation.",
+      "launch_date": "1963-07-26", "country": "United States", "operator": "NASA (built by Hughes Aircraft)",
+      "mission_type": "Communications", "fate": "orbiting_silent",
+      "summary": "Syncom 2 was the first communications satellite in geosynchronous orbit, circling once a day so that it stayed over the same region of Earth.",
+      "significance": "It proved the idea behind today's communications and weather satellites: put a spacecraft about 35,800 km up and it can serve one part of the world continuously.",
+      "facts": ["Its orbit was inclined, so from the ground it traced a figure-of-eight rather than sitting still.", "It carried a telephone call between U.S. President Kennedy and Nigerian Prime Minister Balewa in August 1963."],
+      "timeline": [{"date": "1963-07-26", "label": "Launched from Cape Canaveral on a Delta B"}]
+    },
+    {
+      "norad_id": 858, "title": "Syncom 3", "tagline": "The first geostationary satellite.",
+      "launch_date": "1964-08-19", "country": "United States", "operator": "NASA (built by Hughes Aircraft)",
+      "mission_type": "Communications", "fate": "orbiting_silent",
+      "summary": "Syncom 3 was the first satellite placed in geostationary orbit, appearing to hover over a single point on the equator.",
+      "significance": "Stationed over the Pacific, it relayed television coverage of the 1964 Tokyo Olympic Games to the United States.",
+      "facts": ["Geostationary satellites never rise or set, so a 'pass' is not a meaningful idea for them — they are either in your sky or they are not."],
+      "timeline": [{"date": "1964-08-19", "label": "Launched from Cape Canaveral"}, {"date": "1964-10", "label": "Relays the Tokyo Olympics across the Pacific"}]
+    },
+    {
+      "norad_id": 1002, "title": "LES-1", "tagline": "The 'zombie' satellite that started talking again.",
+      "launch_date": "1965-02-11", "country": "United States", "operator": "MIT Lincoln Laboratory",
+      "mission_type": "Communications technology", "fate": "orbiting_silent",
+      "summary": "Lincoln Experimental Satellite 1 was built to test military communication techniques, but a fault left it stranded in the wrong orbit and it went quiet in 1967.",
+      "significance": "Decades later an amateur radio astronomer in Cornwall, England, picked up its signal again. The likely explanation is that its batteries failed in a way that lets the solar cells power the transmitter whenever the satellite is in sunlight.",
+      "facts": ["The signal fades in and out as the tumbling satellite turns its solar cells toward and away from the Sun."],
+      "timeline": [{"date": "1965-02-11", "label": "Launched from Cape Canaveral on a Titan IIIA"}, {"date": "1967", "label": "Transmissions stop"}, {"date": "2012", "label": "Signals detected again by an amateur observer"}]
+    },
+    {
+      "norad_id": 1778, "title": "Astérix (A-1)", "tagline": "France becomes the third space power.",
+      "launch_date": "1965-11-26", "country": "France", "operator": "CNES",
+      "mission_type": "Technology demonstration", "fate": "orbiting_silent", "last_contact": "1965-11",
+      "summary": "Astérix was France's first satellite, launched on a French Diamant rocket from Hammaguir in the Algerian Sahara.",
+      "significance": "With it France became the third country, after the Soviet Union and the United States, to place a satellite in orbit with its own launcher.",
+      "facts": ["Named after the comic-book Gaul.", "Its antennas were damaged at launch and its signals were received only briefly."],
+      "timeline": [{"date": "1965-11-26", "label": "Launched from Hammaguir, Algeria"}]
+    },
+    {
+      "norad_id": 4382, "title": "Dong Fang Hong 1", "tagline": "China's first satellite.",
+      "launch_date": "1970-04-24", "country": "China", "operator": "China Academy of Space Technology",
+      "mission_type": "Technology demonstration", "fate": "orbiting_silent", "last_contact": "1970-05",
+      "summary": "Dong Fang Hong 1 ('The East Is Red 1') was launched on a Long March 1 rocket from Jiuquan and broadcast the tune of the song it was named after.",
+      "significance": "It made China the fifth country to launch a satellite on its own rocket. 24 April is now marked as China's Space Day.",
+      "facts": ["At 173 kg it was heavier than the first satellites of the four nations that preceded it.", "It transmitted for about three weeks."],
+      "timeline": [{"date": "1970-04-24", "label": "Launched from Jiuquan"}, {"date": "1970-05", "label": "Transmissions end"}]
+    },
+    {
+      "norad_id": 5580, "title": "Prospero", "tagline": "The only satellite launched by a British rocket.",
+      "launch_date": "1971-10-28", "country": "United Kingdom", "operator": "Royal Aircraft Establishment",
+      "mission_type": "Technology demonstration", "fate": "orbiting_silent",
+      "summary": "Prospero tested solar cells, telemetry and a micrometeoroid detector. It was launched from Woomera, Australia, on a Black Arrow rocket.",
+      "significance": "The Black Arrow programme had already been cancelled when Prospero flew, making the United Kingdom the only country to develop an orbital launch capability and then give it up.",
+      "facts": ["Its tape recorder failed in 1973, but its signal could be heard for decades afterwards."],
+      "timeline": [{"date": "1971-10-28", "label": "Launched from Woomera, South Australia"}, {"date": "1973", "label": "Tape recorder fails"}]
+    },
+    {
+      "norad_id": 6126, "title": "Landsat 1", "tagline": "The start of half a century of watching Earth's land.",
+      "launch_date": "1972-07-23", "country": "United States", "operator": "NASA",
+      "mission_type": "Earth observation", "fate": "orbiting_silent", "last_contact": "1978-01",
+      "summary": "First called the Earth Resources Technology Satellite, Landsat 1 was the first satellite designed to study and monitor Earth's land surface.",
+      "significance": "It began the Landsat record, the longest continuous space-based record of Earth's land, used to track forests, farms, cities, glaciers and water.",
+      "facts": ["Its Multispectral Scanner turned out to be more useful than the television cameras it was launched alongside.", "It operated until January 1978."],
+      "timeline": [{"date": "1972-07-23", "label": "Launched from Vandenberg on a Delta rocket"}, {"date": "1978-01", "label": "Retired"}]
+    },
+    {
+      "norad_id": 8820, "title": "LAGEOS 1", "tagline": "A mirror ball built to last millions of years.",
+      "launch_date": "1976-05-04", "country": "United States", "operator": "NASA",
+      "mission_type": "Geodesy", "fate": "orbiting_passive",
+      "summary": "LAGEOS is a 60 cm sphere covered in 426 retroreflectors. It has no power, no electronics and no moving parts; ground stations bounce laser pulses off it to measure distances to within centimetres.",
+      "significance": "Those measurements track the drift of continents, the wobble of Earth's rotation and the shape of the planet. It is still in scientific use, though it has never 'worked' in the usual sense.",
+      "facts": ["It orbits about 5,900 km up, where it should remain for millions of years.", "It carries a plaque designed by Carl Sagan showing Earth's continents in the distant past, today, and millions of years in the future."],
+      "timeline": [{"date": "1976-05-04", "label": "Launched from Vandenberg on a Delta rocket"}]
+    },
+    {
+      "norad_id": 10967, "title": "Seasat", "tagline": "A hundred days that changed oceanography.",
+      "launch_date": "1978-06-27", "country": "United States", "operator": "NASA Jet Propulsion Laboratory",
+      "mission_type": "Ocean observation", "fate": "orbiting_silent", "last_contact": "1978-10",
+      "summary": "Seasat was the first satellite designed to study the oceans by radar, including the first civilian synthetic-aperture radar flown in space.",
+      "significance": "An electrical short circuit ended the mission after roughly a hundred days, but its data proved techniques used by ocean and radar satellites ever since.",
+      "facts": ["It measured sea-surface height, winds, waves and temperature.", "The dead spacecraft is large and still in orbit."],
+      "timeline": [{"date": "1978-06-27", "label": "Launched from Vandenberg (UTC date)"}, {"date": "1978-10-10", "label": "Power failure ends the mission"}]
+    },
+    {
+      "norad_id": 13777, "title": "IRAS", "tagline": "The first map of the whole infrared sky.",
+      "launch_date": "1983-01-26", "country": "United States / Netherlands / United Kingdom", "operator": "NASA, NIVR and SERC",
+      "mission_type": "Astronomy", "fate": "orbiting_silent", "last_contact": "1983-11",
+      "summary": "The Infrared Astronomical Satellite surveyed almost the entire sky in infrared light, with a telescope cooled by liquid helium.",
+      "significance": "In ten months it catalogued hundreds of thousands of infrared sources, found dust discs around other stars and discovered several comets. It stopped observing when the helium ran out.",
+      "facts": ["In January 2020 it passed within tens of metres of another dead satellite, a reminder that silent spacecraft still matter."],
+      "timeline": [{"date": "1983-01-26", "label": "Launched from Vandenberg (UTC date)"}, {"date": "1983-11", "label": "Coolant exhausted; observations end"}, {"date": "2020-01-29", "label": "Close approach with the defunct GGSE-4"}]
+    },
+    {
+      "norad_id": 20322, "title": "COBE", "tagline": "It measured the afterglow of the Big Bang.",
+      "launch_date": "1989-11-18", "country": "United States", "operator": "NASA Goddard Space Flight Center",
+      "mission_type": "Cosmology", "fate": "orbiting_silent", "last_contact": "1993",
+      "summary": "The Cosmic Background Explorer measured the cosmic microwave background, the faint radiation left over from the early universe.",
+      "significance": "COBE showed the background has an almost perfect black-body spectrum and found the tiny temperature variations that seeded galaxies. John Mather and George Smoot shared the 2006 Nobel Prize in Physics for the work.",
+      "facts": ["Science operations ended in 1993."],
+      "timeline": [{"date": "1989-11-18", "label": "Launched from Vandenberg on a Delta rocket"}, {"date": "2006", "label": "Nobel Prize in Physics awarded for COBE's results"}]
+    },
+    {
+      "norad_id": 20580, "title": "Hubble Space Telescope", "tagline": "Still observing after more than three decades.",
+      "launch_date": "1990-04-24", "country": "United States / Europe", "operator": "NASA and ESA",
+      "mission_type": "Astronomy", "fate": "orbiting_active",
+      "summary": "Hubble was carried to orbit by the Space Shuttle Discovery. A flaw in its main mirror blurred its first images until astronauts installed corrective optics in 1993.",
+      "significance": "Hubble helped pin down the age of the universe and the rate of its expansion, and its images changed how the public pictures space. It is included here as a contrast: a working spacecraft among the silent ones.",
+      "facts": ["Astronauts serviced it five times, the last in 2009."],
+      "timeline": [{"date": "1990-04-24", "label": "Launched on Space Shuttle mission STS-31"}, {"date": "1993-12", "label": "First servicing mission corrects its optics"}, {"date": "2009-05", "label": "Final servicing mission"}]
+    },
+    {
+      "norad_id": 25544, "title": "International Space Station (Zarya)", "tagline": "The first piece of the largest structure in orbit.",
+      "launch_date": "1998-11-20", "country": "International", "operator": "NASA, Roscosmos, ESA, JAXA and CSA",
+      "mission_type": "Crewed space station", "fate": "orbiting_active",
+      "summary": "Zarya, the first module of the International Space Station, was launched on a Proton rocket from Baikonur. The station was assembled in orbit over the following years.",
+      "significance": "People have lived aboard continuously since November 2000. It is included here as a familiar modern reference point.",
+      "facts": ["The catalogue entry for the whole station still carries the name of its first module."],
+      "timeline": [{"date": "1998-11-20", "label": "Zarya module launched from Baikonur"}, {"date": "2000-11-02", "label": "First long-duration crew arrives"}]
+    },
+    {
+      "norad_id": 27386, "title": "Envisat", "tagline": "An eight-tonne observatory that fell silent overnight.",
+      "launch_date": "2002-03-01", "country": "Europe", "operator": "European Space Agency",
+      "mission_type": "Earth observation", "fate": "orbiting_silent", "last_contact": "2012-04",
+      "summary": "Envisat carried ten instruments to study Earth's land, oceans, ice and atmosphere, and worked for twice its planned five-year life.",
+      "significance": "Contact was lost without warning in April 2012. Envisat is now one of the largest derelict objects in a busy orbital region and is expected to stay up for well over a century, which makes it a standard case study in space debris.",
+      "facts": ["About the size of a bus.", "ESA declared the mission over in May 2012."],
+      "timeline": [{"date": "2002-03-01", "label": "Launched from Kourou on an Ariane 5"}, {"date": "2012-04-08", "label": "Contact lost"}]
+    },
+    {
+      "norad_id": 2, "title": "Sputnik 1", "tagline": "The first artificial satellite.",
+      "launch_date": "1957-10-04", "country": "Soviet Union", "operator": "OKB-1",
+      "mission_type": "Technology demonstration", "fate": "reentered", "last_contact": "1957-10",
+      "summary": "Sputnik 1 was a polished 58 cm sphere with four antennas that broadcast a simple radio beep anyone with a receiver could hear.",
+      "significance": "Its launch opened the Space Age. Its batteries lasted about three weeks, and the satellite burned up in the atmosphere three months after launch.",
+      "facts": ["It weighed 83.6 kg.", "The way its signal passed through the ionosphere was itself useful science."],
+      "timeline": [{"date": "1957-10-04", "label": "Launched from the site now known as Baikonur"}, {"date": "1957-10-26", "label": "Transmitter batteries run out"}]
+    },
+    {
+      "norad_id": 3, "title": "Sputnik 2", "tagline": "It carried Laika, the first animal to orbit Earth.",
+      "launch_date": "1957-11-03", "country": "Soviet Union", "operator": "OKB-1",
+      "mission_type": "Biological research", "fate": "reentered",
+      "summary": "Launched a month after Sputnik 1, Sputnik 2 carried the dog Laika in a pressurised cabin with no means of returning to Earth.",
+      "significance": "The flight showed a living animal could survive launch and weightlessness, a step toward human spaceflight. Laika died within hours from overheating, a fact made public only decades later.",
+      "facts": ["The satellite stayed attached to its rocket stage."],
+      "timeline": [{"date": "1957-11-03", "label": "Launched with Laika aboard"}]
+    },
+    {
+      "norad_id": 4, "title": "Explorer 1", "tagline": "The first U.S. satellite, and the first space discovery.",
+      "launch_date": "1958-02-01", "country": "United States", "operator": "Army Ballistic Missile Agency / JPL",
+      "mission_type": "Space science", "fate": "reentered", "last_contact": "1958-05",
+      "summary": "Explorer 1 carried a cosmic-ray detector designed by James Van Allen's team at the University of Iowa.",
+      "significance": "Its readings led to the discovery of the radiation belts that surround Earth, now called the Van Allen belts.",
+      "facts": ["It lifted off late on 31 January in Florida; the catalogue date is 1 February in UTC.", "It stayed in orbit for twelve years."],
+      "timeline": [{"date": "1958-02-01", "label": "Launched on a Juno I rocket (UTC date)"}, {"date": "1958-05-23", "label": "Last transmission"}]
+    },
+    {
+      "norad_id": 49, "title": "Echo 1", "tagline": "A 30-metre balloon you could see with your own eyes.",
+      "launch_date": "1960-08-12", "country": "United States", "operator": "NASA",
+      "mission_type": "Passive communications", "fate": "reentered",
+      "summary": "Echo 1 was an aluminised plastic balloon 30.5 m across. Radio signals were bounced off its surface from one ground station to another.",
+      "significance": "It carried the first voice, image and two-way telephone relays via satellite, and was bright enough to be seen by the naked eye across much of the world.",
+      "facts": ["Sunlight pressure visibly changed its orbit, an early measurement of that effect."],
+      "timeline": [{"date": "1960-08-12", "label": "Launched from Cape Canaveral on a Thor-Delta"}]
+    },
+    {
+      "norad_id": 285, "title": "Ariel 1", "tagline": "The first satellite of a third nation.",
+      "launch_date": "1962-04-26", "country": "United Kingdom / United States", "operator": "Science Research Council and NASA",
+      "mission_type": "Ionospheric and solar science", "fate": "reentered",
+      "summary": "Ariel 1 carried British experiments on a spacecraft built by NASA, making the United Kingdom the third country to have a satellite in orbit.",
+      "significance": "It is counted as the first international satellite. Like Telstar 1, it was damaged by radiation from a high-altitude nuclear test in July 1962.",
+      "facts": ["Launched from Cape Canaveral on a Thor-Delta."],
+      "timeline": [{"date": "1962-04-26", "label": "Launched from Cape Canaveral"}]
+    },
+    {
+      "norad_id": 4330, "title": "Ohsumi", "tagline": "Japan's first satellite.",
+      "launch_date": "1970-02-11", "country": "Japan", "operator": "Institute of Space and Aeronautical Science, University of Tokyo",
+      "mission_type": "Technology demonstration", "fate": "reentered", "last_contact": "1970-02",
+      "summary": "Ohsumi was launched on a Lambda-4S rocket from Kagoshima, making Japan the fourth country to orbit a satellite with its own launcher.",
+      "significance": "It transmitted for less than a day but stayed in orbit for 33 years.",
+      "facts": ["Named after the peninsula it was launched from."],
+      "timeline": [{"date": "1970-02-11", "label": "Launched from Kagoshima Space Center"}]
+    },
+    {
+      "norad_id": 5160, "title": "Salyut 1", "tagline": "The first space station.",
+      "launch_date": "1971-04-19", "country": "Soviet Union", "operator": "Soviet space programme",
+      "mission_type": "Crewed space station", "fate": "reentered",
+      "summary": "Salyut 1 was the first space station. The three cosmonauts of Soyuz 11 lived aboard for about three weeks in June 1971.",
+      "significance": "The crew died during their return when their capsule lost pressure — the only people to have died above the boundary of space. The station was deliberately brought down later that year.",
+      "facts": ["It spent 175 days in orbit."],
+      "timeline": [{"date": "1971-04-19", "label": "Launched from Baikonur on a Proton rocket"}, {"date": "1971-06", "label": "Occupied by the Soyuz 11 crew"}]
+    },
+    {
+      "norad_id": 6633, "title": "Skylab", "tagline": "America's first space station.",
+      "launch_date": "1973-05-14", "country": "United States", "operator": "NASA",
+      "mission_type": "Crewed space station", "fate": "reentered",
+      "summary": "Skylab was launched on the last Saturn V rocket. Three crews lived aboard in 1973 and 1974, the last for 84 days.",
+      "significance": "It showed people could live and work in orbit for months and carried a solar observatory. Its uncontrolled re-entry in 1979 scattered debris across the Indian Ocean and Western Australia.",
+      "facts": ["The first crew had to repair damage suffered during launch before the station was usable."],
+      "timeline": [{"date": "1973-05-14", "label": "Launched from Kennedy Space Center"}, {"date": "1974-02", "label": "Final crew departs"}]
+    },
+    {
+      "norad_id": 7752, "title": "Aryabhata", "tagline": "India's first satellite.",
+      "launch_date": "1975-04-19", "country": "India", "operator": "Indian Space Research Organisation",
+      "mission_type": "Science and technology demonstration", "fate": "reentered",
+      "summary": "Built by ISRO and named after the fifth-century mathematician-astronomer, Aryabhata was launched on a Soviet Kosmos-3M rocket from Kapustin Yar.",
+      "significance": "A power failure cut its science experiments short within days, but building and operating it gave India the experience that its later satellite programme was built on.",
+      "facts": ["It carried experiments in X-ray astronomy, solar physics and aeronomy.", "It stayed in orbit for nearly 17 years."],
+      "timeline": [{"date": "1975-04-19", "label": "Launched from Kapustin Yar"}]
+    },
+    {
+      "norad_id": 11899, "title": "Rohini RS-1", "tagline": "The first satellite launched by an Indian rocket.",
+      "launch_date": "1980-07-18", "country": "India", "operator": "Indian Space Research Organisation",
+      "mission_type": "Launch-vehicle technology", "fate": "reentered",
+      "summary": "Rohini RS-1 was placed in orbit by India's SLV-3 rocket from Sriharikota, carrying instruments to monitor the launch vehicle's performance.",
+      "significance": "With this flight India joined the small group of countries able to launch their own satellites.",
+      "facts": ["The SLV-3 project was led by A. P. J. Abdul Kalam."],
+      "timeline": [{"date": "1980-07-18", "label": "Launched from Sriharikota on SLV-3"}]
+    },
+    {
+      "norad_id": 16609, "title": "Mir", "tagline": "The first space station assembled piece by piece.",
+      "launch_date": "1986-02-19", "country": "Soviet Union / Russia", "operator": "Soviet, then Russian, space programme",
+      "mission_type": "Crewed space station", "fate": "reentered",
+      "summary": "Mir's core module was launched in 1986 and six more modules were added over the next decade. It was occupied for most of its fifteen years in orbit.",
+      "significance": "Mir hosted the longest single spaceflight to date — Valeri Polyakov's 437 days — and crews from many countries. It was deliberately de-orbited over the South Pacific in 2001.",
+      "facts": ["The core module's catalogue launch date is 19 February 1986 in UTC."],
+      "timeline": [{"date": "1986-02-19", "label": "Core module launched from Baikonur (UTC date)"}, {"date": "1996", "label": "Final module added"}]
+    }
+  ]
+}

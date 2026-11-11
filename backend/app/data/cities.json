@@ -1,0 +1,698 @@
+{
+ "note": "City-centre coordinates, sea-level observer. Compiled by hand for this build; enter exact coordinates for precise work.",
+ "cities": [
+  {
+   "id": "kolkata",
+   "name": "Kolkata",
+   "region": "West Bengal",
+   "country": "India",
+   "latitude_deg": 22.5726,
+   "longitude_deg": 88.3639,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "delhi",
+   "name": "Delhi",
+   "region": "Delhi",
+   "country": "India",
+   "latitude_deg": 28.6139,
+   "longitude_deg": 77.209,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "mumbai",
+   "name": "Mumbai",
+   "region": "Maharashtra",
+   "country": "India",
+   "latitude_deg": 19.076,
+   "longitude_deg": 72.8777,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "bengaluru",
+   "name": "Bengaluru",
+   "region": "Karnataka",
+   "country": "India",
+   "latitude_deg": 12.9716,
+   "longitude_deg": 77.5946,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "chennai",
+   "name": "Chennai",
+   "region": "Tamil Nadu",
+   "country": "India",
+   "latitude_deg": 13.0827,
+   "longitude_deg": 80.2707,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "hyderabad",
+   "name": "Hyderabad",
+   "region": "Telangana",
+   "country": "India",
+   "latitude_deg": 17.385,
+   "longitude_deg": 78.4867,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "pune",
+   "name": "Pune",
+   "region": "Maharashtra",
+   "country": "India",
+   "latitude_deg": 18.5204,
+   "longitude_deg": 73.8567,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "ahmedabad",
+   "name": "Ahmedabad",
+   "region": "Gujarat",
+   "country": "India",
+   "latitude_deg": 23.0225,
+   "longitude_deg": 72.5714,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "jaipur",
+   "name": "Jaipur",
+   "region": "Rajasthan",
+   "country": "India",
+   "latitude_deg": 26.9124,
+   "longitude_deg": 75.7873,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "lucknow",
+   "name": "Lucknow",
+   "region": "Uttar Pradesh",
+   "country": "India",
+   "latitude_deg": 26.8467,
+   "longitude_deg": 80.9462,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "patna",
+   "name": "Patna",
+   "region": "Bihar",
+   "country": "India",
+   "latitude_deg": 25.5941,
+   "longitude_deg": 85.1376,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "bhopal",
+   "name": "Bhopal",
+   "region": "Madhya Pradesh",
+   "country": "India",
+   "latitude_deg": 23.2599,
+   "longitude_deg": 77.4126,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "bhubaneswar",
+   "name": "Bhubaneswar",
+   "region": "Odisha",
+   "country": "India",
+   "latitude_deg": 20.2961,
+   "longitude_deg": 85.8245,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "guwahati",
+   "name": "Guwahati",
+   "region": "Assam",
+   "country": "India",
+   "latitude_deg": 26.1445,
+   "longitude_deg": 91.7362,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "ranchi",
+   "name": "Ranchi",
+   "region": "Jharkhand",
+   "country": "India",
+   "latitude_deg": 23.3441,
+   "longitude_deg": 85.3096,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "jamshedpur",
+   "name": "Jamshedpur",
+   "region": "Jharkhand",
+   "country": "India",
+   "latitude_deg": 22.8046,
+   "longitude_deg": 86.2029,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "thiruvananthapuram",
+   "name": "Thiruvananthapuram",
+   "region": "Kerala",
+   "country": "India",
+   "latitude_deg": 8.5241,
+   "longitude_deg": 76.9366,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "kochi",
+   "name": "Kochi",
+   "region": "Kerala",
+   "country": "India",
+   "latitude_deg": 9.9312,
+   "longitude_deg": 76.2673,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "chandigarh",
+   "name": "Chandigarh",
+   "region": "Chandigarh",
+   "country": "India",
+   "latitude_deg": 30.7333,
+   "longitude_deg": 76.7794,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "srinagar",
+   "name": "Srinagar",
+   "region": "Jammu and Kashmir",
+   "country": "India",
+   "latitude_deg": 34.0837,
+   "longitude_deg": 74.7973,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "varanasi",
+   "name": "Varanasi",
+   "region": "Uttar Pradesh",
+   "country": "India",
+   "latitude_deg": 25.3176,
+   "longitude_deg": 82.9739,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "nagpur",
+   "name": "Nagpur",
+   "region": "Maharashtra",
+   "country": "India",
+   "latitude_deg": 21.1458,
+   "longitude_deg": 79.0882,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "visakhapatnam",
+   "name": "Visakhapatnam",
+   "region": "Andhra Pradesh",
+   "country": "India",
+   "latitude_deg": 17.6868,
+   "longitude_deg": 83.2185,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "sriharikota",
+   "name": "Sriharikota",
+   "region": "Andhra Pradesh",
+   "country": "India",
+   "latitude_deg": 13.7199,
+   "longitude_deg": 80.2304,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "leh",
+   "name": "Leh",
+   "region": "Ladakh",
+   "country": "India",
+   "latitude_deg": 34.1526,
+   "longitude_deg": 77.5771,
+   "timezone": "Asia/Kolkata"
+  },
+  {
+   "id": "dhaka",
+   "name": "Dhaka",
+   "region": "",
+   "country": "Bangladesh",
+   "latitude_deg": 23.8103,
+   "longitude_deg": 90.4125,
+   "timezone": "Asia/Dhaka"
+  },
+  {
+   "id": "kathmandu",
+   "name": "Kathmandu",
+   "region": "",
+   "country": "Nepal",
+   "latitude_deg": 27.7172,
+   "longitude_deg": 85.324,
+   "timezone": "Asia/Kathmandu"
+  },
+  {
+   "id": "colombo",
+   "name": "Colombo",
+   "region": "",
+   "country": "Sri Lanka",
+   "latitude_deg": 6.9271,
+   "longitude_deg": 79.8612,
+   "timezone": "Asia/Colombo"
+  },
+  {
+   "id": "karachi",
+   "name": "Karachi",
+   "region": "Sindh",
+   "country": "Pakistan",
+   "latitude_deg": 24.8607,
+   "longitude_deg": 67.0011,
+   "timezone": "Asia/Karachi"
+  },
+  {
+   "id": "tokyo",
+   "name": "Tokyo",
+   "region": "",
+   "country": "Japan",
+   "latitude_deg": 35.6762,
+   "longitude_deg": 139.6503,
+   "timezone": "Asia/Tokyo"
+  },
+  {
+   "id": "beijing",
+   "name": "Beijing",
+   "region": "",
+   "country": "China",
+   "latitude_deg": 39.9042,
+   "longitude_deg": 116.4074,
+   "timezone": "Asia/Shanghai"
+  },
+  {
+   "id": "shanghai",
+   "name": "Shanghai",
+   "region": "",
+   "country": "China",
+   "latitude_deg": 31.2304,
+   "longitude_deg": 121.4737,
+   "timezone": "Asia/Shanghai"
+  },
+  {
+   "id": "seoul",
+   "name": "Seoul",
+   "region": "",
+   "country": "South Korea",
+   "latitude_deg": 37.5665,
+   "longitude_deg": 126.978,
+   "timezone": "Asia/Seoul"
+  },
+  {
+   "id": "singapore",
+   "name": "Singapore",
+   "region": "",
+   "country": "Singapore",
+   "latitude_deg": 1.3521,
+   "longitude_deg": 103.8198,
+   "timezone": "Asia/Singapore"
+  },
+  {
+   "id": "jakarta",
+   "name": "Jakarta",
+   "region": "",
+   "country": "Indonesia",
+   "latitude_deg": -6.2088,
+   "longitude_deg": 106.8456,
+   "timezone": "Asia/Jakarta"
+  },
+  {
+   "id": "bangkok",
+   "name": "Bangkok",
+   "region": "",
+   "country": "Thailand",
+   "latitude_deg": 13.7563,
+   "longitude_deg": 100.5018,
+   "timezone": "Asia/Bangkok"
+  },
+  {
+   "id": "dubai",
+   "name": "Dubai",
+   "region": "",
+   "country": "United Arab Emirates",
+   "latitude_deg": 25.2048,
+   "longitude_deg": 55.2708,
+   "timezone": "Asia/Dubai"
+  },
+  {
+   "id": "tehran",
+   "name": "Tehran",
+   "region": "",
+   "country": "Iran",
+   "latitude_deg": 35.6892,
+   "longitude_deg": 51.389,
+   "timezone": "Asia/Tehran"
+  },
+  {
+   "id": "istanbul",
+   "name": "Istanbul",
+   "region": "",
+   "country": "Türkiye",
+   "latitude_deg": 41.0082,
+   "longitude_deg": 28.9784,
+   "timezone": "Europe/Istanbul"
+  },
+  {
+   "id": "moscow",
+   "name": "Moscow",
+   "region": "",
+   "country": "Russia",
+   "latitude_deg": 55.7558,
+   "longitude_deg": 37.6173,
+   "timezone": "Europe/Moscow"
+  },
+  {
+   "id": "london",
+   "name": "London",
+   "region": "England",
+   "country": "United Kingdom",
+   "latitude_deg": 51.5074,
+   "longitude_deg": -0.1278,
+   "timezone": "Europe/London"
+  },
+  {
+   "id": "paris",
+   "name": "Paris",
+   "region": "",
+   "country": "France",
+   "latitude_deg": 48.8566,
+   "longitude_deg": 2.3522,
+   "timezone": "Europe/Paris"
+  },
+  {
+   "id": "berlin",
+   "name": "Berlin",
+   "region": "",
+   "country": "Germany",
+   "latitude_deg": 52.52,
+   "longitude_deg": 13.405,
+   "timezone": "Europe/Berlin"
+  },
+  {
+   "id": "madrid",
+   "name": "Madrid",
+   "region": "",
+   "country": "Spain",
+   "latitude_deg": 40.4168,
+   "longitude_deg": -3.7038,
+   "timezone": "Europe/Madrid"
+  },
+  {
+   "id": "rome",
+   "name": "Rome",
+   "region": "",
+   "country": "Italy",
+   "latitude_deg": 41.9028,
+   "longitude_deg": 12.4964,
+   "timezone": "Europe/Rome"
+  },
+  {
+   "id": "amsterdam",
+   "name": "Amsterdam",
+   "region": "",
+   "country": "Netherlands",
+   "latitude_deg": 52.3676,
+   "longitude_deg": 4.9041,
+   "timezone": "Europe/Amsterdam"
+  },
+  {
+   "id": "stockholm",
+   "name": "Stockholm",
+   "region": "",
+   "country": "Sweden",
+   "latitude_deg": 59.3293,
+   "longitude_deg": 18.0686,
+   "timezone": "Europe/Stockholm"
+  },
+  {
+   "id": "oslo",
+   "name": "Oslo",
+   "region": "",
+   "country": "Norway",
+   "latitude_deg": 59.9139,
+   "longitude_deg": 10.7522,
+   "timezone": "Europe/Oslo"
+  },
+  {
+   "id": "reykjavik",
+   "name": "Reykjavik",
+   "region": "",
+   "country": "Iceland",
+   "latitude_deg": 64.1466,
+   "longitude_deg": -21.9426,
+   "timezone": "Atlantic/Reykjavik"
+  },
+  {
+   "id": "troms",
+   "name": "Tromsø",
+   "region": "",
+   "country": "Norway",
+   "latitude_deg": 69.6492,
+   "longitude_deg": 18.9553,
+   "timezone": "Europe/Oslo"
+  },
+  {
+   "id": "cairo",
+   "name": "Cairo",
+   "region": "",
+   "country": "Egypt",
+   "latitude_deg": 30.0444,
+   "longitude_deg": 31.2357,
+   "timezone": "Africa/Cairo"
+  },
+  {
+   "id": "lagos",
+   "name": "Lagos",
+   "region": "",
+   "country": "Nigeria",
+   "latitude_deg": 6.5244,
+   "longitude_deg": 3.3792,
+   "timezone": "Africa/Lagos"
+  },
+  {
+   "id": "nairobi",
+   "name": "Nairobi",
+   "region": "",
+   "country": "Kenya",
+   "latitude_deg": -1.2921,
+   "longitude_deg": 36.8219,
+   "timezone": "Africa/Nairobi"
+  },
+  {
+   "id": "johannesburg",
+   "name": "Johannesburg",
+   "region": "",
+   "country": "South Africa",
+   "latitude_deg": -26.2041,
+   "longitude_deg": 28.0473,
+   "timezone": "Africa/Johannesburg"
+  },
+  {
+   "id": "cape-town",
+   "name": "Cape Town",
+   "region": "",
+   "country": "South Africa",
+   "latitude_deg": -33.9249,
+   "longitude_deg": 18.4241,
+   "timezone": "Africa/Johannesburg"
+  },
+  {
+   "id": "new-york",
+   "name": "New York",
+   "region": "New York",
+   "country": "United States",
+   "latitude_deg": 40.7128,
+   "longitude_deg": -74.006,
+   "timezone": "America/New_York"
+  },
+  {
+   "id": "washington",
+   "name": "Washington",
+   "region": "District of Columbia",
+   "country": "United States",
+   "latitude_deg": 38.9072,
+   "longitude_deg": -77.0369,
+   "timezone": "America/New_York"
+  },
+  {
+   "id": "chicago",
+   "name": "Chicago",
+   "region": "Illinois",
+   "country": "United States",
+   "latitude_deg": 41.8781,
+   "longitude_deg": -87.6298,
+   "timezone": "America/Chicago"
+  },
+  {
+   "id": "houston",
+   "name": "Houston",
+   "region": "Texas",
+   "country": "United States",
+   "latitude_deg": 29.7604,
+   "longitude_deg": -95.3698,
+   "timezone": "America/Chicago"
+  },
+  {
+   "id": "denver",
+   "name": "Denver",
+   "region": "Colorado",
+   "country": "United States",
+   "latitude_deg": 39.7392,
+   "longitude_deg": -104.9903,
+   "timezone": "America/Denver"
+  },
+  {
+   "id": "los-angeles",
+   "name": "Los Angeles",
+   "region": "California",
+   "country": "United States",
+   "latitude_deg": 34.0522,
+   "longitude_deg": -118.2437,
+   "timezone": "America/Los_Angeles"
+  },
+  {
+   "id": "cape-canaveral",
+   "name": "Cape Canaveral",
+   "region": "Florida",
+   "country": "United States",
+   "latitude_deg": 28.3922,
+   "longitude_deg": -80.6077,
+   "timezone": "America/New_York"
+  },
+  {
+   "id": "honolulu",
+   "name": "Honolulu",
+   "region": "Hawaii",
+   "country": "United States",
+   "latitude_deg": 21.3069,
+   "longitude_deg": -157.8583,
+   "timezone": "Pacific/Honolulu"
+  },
+  {
+   "id": "anchorage",
+   "name": "Anchorage",
+   "region": "Alaska",
+   "country": "United States",
+   "latitude_deg": 61.2181,
+   "longitude_deg": -149.9003,
+   "timezone": "America/Anchorage"
+  },
+  {
+   "id": "toronto",
+   "name": "Toronto",
+   "region": "Ontario",
+   "country": "Canada",
+   "latitude_deg": 43.6532,
+   "longitude_deg": -79.3832,
+   "timezone": "America/Toronto"
+  },
+  {
+   "id": "vancouver",
+   "name": "Vancouver",
+   "region": "British Columbia",
+   "country": "Canada",
+   "latitude_deg": 49.2827,
+   "longitude_deg": -123.1207,
+   "timezone": "America/Vancouver"
+  },
+  {
+   "id": "mexico-city",
+   "name": "Mexico City",
+   "region": "",
+   "country": "Mexico",
+   "latitude_deg": 19.4326,
+   "longitude_deg": -99.1332,
+   "timezone": "America/Mexico_City"
+  },
+  {
+   "id": "bogota",
+   "name": "Bogotá",
+   "region": "",
+   "country": "Colombia",
+   "latitude_deg": 4.711,
+   "longitude_deg": -74.0721,
+   "timezone": "America/Bogota"
+  },
+  {
+   "id": "lima",
+   "name": "Lima",
+   "region": "",
+   "country": "Peru",
+   "latitude_deg": -12.0464,
+   "longitude_deg": -77.0428,
+   "timezone": "America/Lima"
+  },
+  {
+   "id": "sao-paulo",
+   "name": "São Paulo",
+   "region": "",
+   "country": "Brazil",
+   "latitude_deg": -23.5505,
+   "longitude_deg": -46.6333,
+   "timezone": "America/Sao_Paulo"
+  },
+  {
+   "id": "buenos-aires",
+   "name": "Buenos Aires",
+   "region": "",
+   "country": "Argentina",
+   "latitude_deg": -34.6037,
+   "longitude_deg": -58.3816,
+   "timezone": "America/Argentina/Buenos_Aires"
+  },
+  {
+   "id": "santiago",
+   "name": "Santiago",
+   "region": "",
+   "country": "Chile",
+   "latitude_deg": -33.4489,
+   "longitude_deg": -70.6693,
+   "timezone": "America/Santiago"
+  },
+  {
+   "id": "sydney",
+   "name": "Sydney",
+   "region": "New South Wales",
+   "country": "Australia",
+   "latitude_deg": -33.8688,
+   "longitude_deg": 151.2093,
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "id": "melbourne",
+   "name": "Melbourne",
+   "region": "Victoria",
+   "country": "Australia",
+   "latitude_deg": -37.8136,
+   "longitude_deg": 144.9631,
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "id": "perth",
+   "name": "Perth",
+   "region": "Western Australia",
+   "country": "Australia",
+   "latitude_deg": -31.9523,
+   "longitude_deg": 115.8613,
+   "timezone": "Australia/Perth"
+  },
+  {
+   "id": "auckland",
+   "name": "Auckland",
+   "region": "",
+   "country": "New Zealand",
+   "latitude_deg": -36.8509,
+   "longitude_deg": 174.7645,
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "id": "mcmurdo-station",
+   "name": "McMurdo Station",
+   "region": "",
+   "country": "Antarctica",
+   "latitude_deg": -77.8419,
+   "longitude_deg": 166.6863,
+   "timezone": "Antarctica/McMurdo"
+  }
+ ]
+}
